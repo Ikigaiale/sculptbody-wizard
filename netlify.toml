@@ -1,0 +1,9 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "https://www.agenda.sculptbody.cl/*"
+  to   = "https://agenda.sculptbody.cl/:splat"
+  status = 301
+  force = true
