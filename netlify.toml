@@ -3,7 +3,7 @@
   functions = "netlify/functions"
 
 [[redirects]]
-  from = "https://www.agenda.sculptbody.cl/*"
-  to   = "https://agenda.sculptbody.cl/:splat"
+  from = "https://www.agenda-pro-2.netlify.app/*"
+  to   = "https://agenda-pro-2.netlify.app/:splat"
   status = 301
   force = true
