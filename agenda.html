@@ -379,7 +379,7 @@ async function loadServices() {
   cont.innerHTML = '<div class="loading"><div class="spinner"></div>Cargando tratamientos...</div>';
 
   try {
-    const res  = await fetch('/api/services?branch=' + state.branch);
+    const res  = await fetch('/.netlify/functions/services?branch=' + state.branch);
     const data = await res.json();
     if (data.error) throw new Error(data.error);
 
@@ -479,7 +479,7 @@ async function selectDate(dateStr) {
   cont.innerHTML = '<div class="loading"><div class="spinner"></div>Buscando horarios...</div>';
 
   try {
-    const res  = await fetch(`/api/slots?branch=${state.branch}&service_id=${state.service.id}&date=${dateStr}`);
+    const res  = await fetch(`/.netlify/functions/slots?branch=${state.branch}&service_id=${state.service.id}&date=${dateStr}`);
     const data = await res.json();
 
     if (data.error || !data.slots || !data.slots.length) {
@@ -550,7 +550,7 @@ async function confirmBooking() {
   btn.disabled = true; btn.textContent = 'Confirmando...';
 
   try {
-    const res  = await fetch('/api/book', {
+    const res  = await fetch('/.netlify/functions/book', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
